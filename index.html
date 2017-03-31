@@ -1,0 +1,116 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head profile="http://gmpg.org/xfn/11">
+
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Expires" content="Monday, 16-Apr-73 13:10:00 GMT" />
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+	<title>Penn State WebAccess Secure Login: </title>
+	<!-- login.html -->
+	<!-- factors via query:  -->
+	<!-- factors satisfied:  -->
+	
+	<link href="/css/reset.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="/css/default.css" rel="stylesheet" type="text/css"  media="all" />
+	<link rel="shortcut icon" type="image/x-icon" href="/images/favicon.png" />
+	<!-- Viewport changed; mainly to maximize the website on iOS devices -->
+	<meta name="viewport" content="width=device-width" />
+	
+	<script language="javascript" type="text/javascript">
+		<!--
+		function focusLogin() {
+			document.f.login.focus();
+		}
+	
+		function focusLogout() {
+			document.f.verify.focus();
+		}
+	
+		function showPasscode(){
+			var it = document.getElementById('passcode-div');
+			var txt = '';
+			if( txt.substr(0, 3)  == 'otp' ) {
+				document.getElementById('passcode').disabled = false;
+				it.style.display = 'block';
+			}
+		}
+		//  -->
+	</script>
+	
+</head>
+
+<body onLoad="if ( window != top ) top.location.href = window.location.href; focusLogin();">
+
+<div id="main-wrapper">
+	
+	<!-- Header section includes everything above the box -->
+	<div id="header">
+		<div id="title"><h1><span class="green">Web</span><span class="blue">Access</span></h1></div>
+		<div id="header-logo"><a href="http://www.psu.edu"><img src="/images/psu-shield.png" alt="Penn State Home Page" /></a></div>
+		<div id="access-links">
+			<div id="access-links-help"><a href="/help.html">Help</a></div>
+		</div>
+	</div><!-- End of Header -->
+	
+		
+	<!-- Content section is the box -->
+	<div id="content-box">
+		
+	
+		<!-- main content section includes a box around it when in mobile view -->
+		<div id="main-content">
+		
+			<p>Please enter your Access Account ID or Friends of Penn State ID (e.g. xyz5000).</p>
+			
+			<form name="f" action="/" enctype="application/x-www-form-urlencoded" method="post" autocomplete="off" autocapitalize="off" autocorrect="off">
+				<input type="hidden" name="ref" value="" />
+				<input type="hidden" name="service" value="" />
+				<input type="hidden" name="required" value="" />
+
+				<!-- Enter User ID -->
+				<div class="form-row">
+					<label for="login">User ID</label>
+					<input id="login" placeholder="xyz5000" class="formw" name="login" size="15" value="" type="text" />
+				</div>
+				
+				<!-- Enter Password -->
+				<div class="form-row">
+					<label for="password">Password</label>
+					<input value="" class="formw" size="15" id="password" name="password" autocomplete="off" type="password" />
+				</div>
+				
+				<!-- Token field -->
+				<div class="form-row" id="passcode-div" style="display:none;">
+					<label for="passcode">Token</label>
+					<input value="" class="formw" size="15" id="passcode" name="passcode" disabled="disabled" autocomplete="off" type="password" />
+				</div>
+				
+				<div class="button"><input value="Log In" type="submit" /></div>
+			</form>
+			
+			<!-- Links to change your account password -->
+			<div id="account-links">
+				<div class="link-item"><a class="account-link-pwd" href="https://www.work.psu.edu/expired_password/kpasswd_expired.cgi">Change Access Account Password</a>&nbsp;</div>
+				<div class="link-item"><a href= "https://fps.psu.edu/passwd/">Change FPS Account Password</a></div>
+			</div>	
+			
+		</div><!-- End of Form -->
+		
+		<!-- Footer section appears in the bottom of the box -->
+		<div id="footer">
+			<div class="link-item"><a href="http://www.psu.edu/">The Pennsylvania State University</a></div>
+			<div class="link-item">&#169;2016.  All rights reserved.</div>
+			<div class="link-item break"></div>
+			<div class="link-item"><a href="http://aset.its.psu.edu/alternative.html">Nondiscrimination Policy</a></div>
+			<div class="link-item spacer"> - </div>
+			<div class="link-item"><a href="http://www.psu.edu/ur/legal.html">Privacy and Legal Statements</a></div>
+		</div>
+	
+	</div><!-- End of content section -->
+
+</div><!-- End of main -->
+
+</body>
+</html>

@@ -1,0 +1,472 @@
+/* *************************************** */
+/* ------- Global & Wrapper Styles ------- */
+/* *************************************** */
+
+body {
+	font: 11px/18px verdana, helvetica, san-serif;
+	background: white;
+}
+
+#main-wrapper {	
+	margin: 5% auto 1% auto;
+	width: 500px; }
+a {
+	text-decoration:none;
+    font-family: verdana, helvetica, san-serif;
+    font-weight : normal;
+}
+
+a:hover		{ color:#669933; text-decoration:underline}
+a:link 		{ color:#333366; }
+a:visited	{ color:#006699; }
+a:active	{ text-decoration : underline overline; }
+
+h1 { font: normal 26px verdana, helvetica, sans-serif; }
+h2 { font: normal 20px/30px verdana, helvetica, sans-serif; color:#190C5F; }
+h3 { font: normal 16px/24px verdana, helvetica, sans-serif; color:#190C5F; }
+
+dt { font-weight: bold; padding-top:10px;}
+dd {}
+ul li { list-style-type: disc; margin-left:20px;}
+
+.link-item {
+	display: inline;
+	padding:0px 2px; }
+
+.break {
+	display: block; }
+
+em 		{font-style: italic; }
+.green	{ color:#64B634; }
+.blue	{ color:#190C5F; }
+
+
+/* *************************************** */
+/* ------------- Header Area ------------- */
+/* *************************************** */
+
+#header { 
+	margin: 0 2%;
+	position: relative;
+	height:78px;
+}
+
+#header #title {
+	width: 100%;
+	text-align: right;
+	position: absolute;
+	z-index: -1000;
+  /* Changed by Charles Trust on 7/22/2016 for new PSU logo */
+  top: 21px;
+}
+
+/* Changed by Charles Trust on 7/22/2016 for new PSU logo
+#header-logo {
+	background: url('../images/header-bg.png') repeat-x;
+}
+*/
+
+/*	Various links appear in the access info, including help and logout.
+	We want these child div's to float left and positioned at the parents base. */
+/* Changed by Charles Trust on 7/22/2016 for new PSU logo */
+#access-links {			
+	width: 100%; 
+	text-align:right;					
+	position: absolute; 
+	bottom: -20px;	
+	}
+#access-links div { 	display:inline;	}
+#access-links-help a {	
+	color:#F69F47;
+	background: url(../images/account-link-help.png) no-repeat left;
+	padding: 0 0 0 20px;
+	}
+#access-links-login a {	
+	color:#E92300;
+	background: url(../images/account-link-login.png) no-repeat left;
+	padding: 0 0 0 20px; 
+	}
+#access-links-logout a {
+	color:#063389;
+	background: url(../images/account-link-logout.png) no-repeat left;
+	padding: 0 0 0 20px;
+	}
+
+/* *************************************** */
+/* ----- Content Area ( in the box ) ----- */
+/* *************************************** */
+
+#content-box {
+	position: relative;		/* position relative so footer can sink to bottom */
+	background: url('../images/thumbprint.png') no-repeat 95% 30%;
+	border: 1px solid #000;
+	padding:10px 10px 100px 10px;		/* Allow some padding between text and border */
+  /* Added by Charles Trust on 7/22/2016 for new PSU logo */
+  margin-top: 20px;
+}
+#content-box p { padding:5px 0px; }		/* Add padding to paragraphs */
+
+p#alert { 								/* Add the alert icon */
+	padding:10px 0px 10px 20px;
+	background: url(../images/account-link-alert.png) no-repeat left 10px;
+}
+#alert-prefix { font-weight:bold; }
+
+p#alert.error { 								/* Add the alert icon */
+	padding:10px 0px 10px 20px;
+	background: url(../images/account-link-error.png) no-repeat left 10px;
+}
+
+#main-content {
+	position: relative;
+	clear: both;
+}
+
+#account-links {
+	width: 90%;			/* width = 100 - 2*sideMargin */
+	margin: 0% 3%;		/* margin controls spacing right and left */
+	position: absolute; bottom: 0;
+	text-align: center;
+	padding:6% 0% 2%;		/* padding controls spacing above and below */
+}
+
+#footer {
+	width: 96%;
+	margin: 0 auto 0 auto;		/* margin controls spacing right and left */
+	position: absolute; bottom: 0;
+	text-align: center;
+	border-top: groove 2px;
+	padding:4% 0%;		/* padding controls spacing above and below */
+}
+
+
+/* *************************************** */
+/* ------------- Form Styles ------------- */
+/* *************************************** */
+
+form {
+	padding:40px 0px 80px 0px;
+}
+div.form-row {
+  clear: both;
+  padding-top: 10px;
+}
+
+div.form-row label {
+  float: left;
+  width: 30%;
+  padding-right:2%;
+  text-align: right;
+  white-space: nowrap;
+  min-width: 135px;
+  margin-left: -5px;
+}
+
+div.form-row span.formw {
+  float: right;
+  width: 30%;
+  text-align: left;
+} 
+
+.form-note {
+	padding-left:30%;	/* must match div.form-row label width */
+	margin-left:2%;		/* must match div.form-row label padding-right */
+	padding-top:5px;
+}
+.button { display:inline; }
+.button input {
+	margin-top:10px;
+	margin-left:32%;	/* must match div.form-row label width + padding-right */
+}
+
+#duo-div.form-row {
+	margin-left: 65px;
+}
+
+#duoDeviceListHeader {
+	padding: 0 0 3px 4px;
+}
+
+#pushHelp {
+cursor: pointer;
+}
+
+#phoneHelp {
+cursor: pointer;
+}
+
+#smsHelp {
+cursor: pointer;
+}
+
+#passcodeHelp {
+cursor: pointer;
+}
+
+#recommended {
+  color: #F00;
+  font-weight: bold;
+}
+
+#smscode {
+	color: #005900;
+	padding-left: 10px;
+}
+
+input[type="radio"] {
+  max-width: 15px;
+  margin: 7px 10px 0 -163px;
+}
+
+.devicelist {
+  text-align: left !important;
+  padding-left: 30px;
+}
+
+#duoPasscodeInput {
+  margin-left: 80px !important;
+}
+
+
+/* *************************************** */
+/* ------- Other Content Overrides ------- */
+/* *************************************** */
+
+.no-thumb #content-box { background: none; }	/* No thumbprint on select pages */
+.no-thumb #content-box dl p { padding:0px; }	/* Remove padding from any paragraphs used within the FAQs */
+.underline-links #content-box a {text-decoration: underline;}/* Add underlines the links where page includes lots of text */
+
+p.avoid-thumb { margin-right:135px; }			/* Add margin to long paragraphs so that text does not overlap thumbprint */
+
+#services { margin:15px; }						/* adding whitespace to list of web services */
+
+form.verify-logout { padding:50px } 			/* Extra padding added to verify-logout page to increase box size for proper display */
+.multiple input { margin-left:3%; }				/* Remove excess padding for the verify-logout buttons since there is no text to align to */
+form.no-lower-padding { padding-bottom:0px; }	/* Remove padding from the 1st form on the reauth.html page */
+form.switch-users { padding-top:0px; }			/* Remove padding from the 2nd form on the reauth.html page */
+
+/* *************************************** */
+/* ------------ System Styles ------------ */
+/* *************************************** */
+
+span.error {font-size: larger;
+        font-weight: bold;
+        color: red !important;
+}
+
+span.error a {
+         text-decoration : underline;
+        font-size: larger;
+        color: red !important;
+}
+
+/* *************************************** */
+/* ----------- Fun Transitions ----------- */
+/* *************************************** */
+/* www.csskarma.com/blog/media-animations/ */
+
+body { 
+    transition:all .2s linear; 
+    -o-transition:all .2s linear; 
+    -moz-transition:all .2s linear; 
+    -webkit-transition:all .2s linear;
+}
+input {
+    transition:none; 
+    -o-transition:none; 
+    -moz-transition:none; 
+    -webkit-transition:none;
+}
+
+
+/* *************************************** */
+/* ------------ Media Queries ------------ */
+/* *************************************** */
+
+/* ------ FOR SMALL SCREENS AND TABLETS --------- */
+@media all and (max-width: 530px) {
+	/* Since the box + padding is 530px; the box width must become*/
+	/* fluid when the window size decreases past 530px */
+	#main-wrapper {	margin: 5% auto 0% auto; width: 94%;}
+	/* All font sizes increased */
+	body, input { font: 12px/18px verdana, helvetica, san-serif;}
+	/* We remove thumb print for pages containing mostly text (no forms) and allow paragraphs to wrap 100% */
+	.avoid-thumb #content-box { background: none; }	/* No thumbprint on select pages */
+	p.avoid-thumb { margin-right:0px; }
+	/* Listed links are no longer displayed inline and */
+	/* any spacer elements between them are rendered invisible */
+	.link-item	{	display: block; }
+	.spacer		{	display: none;	}
+	#footer		{	padding:1% 0%;	}		/* decrease footer to prevent border from overlapping text */
+}
+
+/* ------ FOR SMALL SCREENS AND MOBILE --------- */
+@media all and (max-width: 400px) {
+
+	/* Changed by Charles Trust on 7/22/2016 for new PSU logo */
+	#header-logo a img {
+  	  max-width: 270px;
+	}
+	#header #title {
+    	  top: 20px;
+	  padding-left: 3px;
+	}
+
+	/* Continue to have a fluid box */
+	#main-wrapper {	margin: 2% auto 0% auto; width: 100%; }
+
+	/* All font sizes increased again */
+	body, input { font: 16px/24px verdana, helvetica, san-serif; }
+	h1 { font: normal 26px verdana, helvetica, sans-serif; }
+	h2 { font: normal 32px/40px verdana, helvetica, sans-serif; color:#190C5F; }
+	h3 { font: normal 24px/32px verdana, helvetica, sans-serif; color:#190C5F; }
+
+	/* Remove all icons from the mobile view */
+	p#alert,
+	p#alert.error,
+	#access-links-help a,
+	#access-links-login a,
+	#access-links-logout a {
+		background: none;
+		padding: 0 2px; }
+
+	/* Replace thumb print background image and reposition */
+	#content-box {
+		position: relative;
+		background: url('../images/thumbprint-40.png') no-repeat 93% 3%;
+		height:auto;			/* allow height to scale */
+		border: none;			/* remove border */
+		/* Changed by Charles Trust on 7/22/2016 for new PSU logo */
+    margin: 20px 0 0 0;
+    padding:2px 5px 0px 5px;
+	}
+	
+	#main-content {			
+		clear: both;
+		border: 1px solid #000;			/* add new border */
+		-webkit-border-radius: 10px;	/* add radius to new box */
+		-moz-border-radius: 10px;
+		-o-border-radius: 10px;
+		border-radius: 10px;
+		padding: 10px;
+		padding-top: 3%;				/* reduce top padding */
+		height: auto;
+	}
+	
+	/* Continue displaying links as stacked items without the spacers */
+	.link-item	{	display: block; }
+	.spacer		{	display: none;	}
+
+	#footer {
+		width: 90%;	
+		margin: 0% 5%;
+		position: relative; 	/* change to relative positioning */
+		text-align: center;
+		border-top: none;		/* remove top border */
+		padding:1% 0%;
+	}
+	
+	form { padding:5px 0px; }	/* reduce form padding */
+	form.verify-logout { padding:5px }  /* Remove most of the padding since mobile view does not require a minimum height to render correctly */
+
+	div.form-row label {
+		float: none;			/* remove float */
+		width: 95%;				/* maximize row across line */
+		text-align: left;		/* change to align text left */
+		display: inline;		/* force new line by displaying in block */
+		font-weight: bold;		/* emphasize lables with bold text */
+		
+	}
+
+	div.form-row span.formw {
+	  float: none;				/* remove float */
+	  width: 95%;				/* input field spans most of page for mobile */
+	  text-align: left;			/* change to align text left */
+	} 
+	
+	.form-note {
+		padding-left:0%;		/* change to align text left */
+		margin-left:0%;			/* change to align text left */
+		padding-top:5px;
+	}
+
+	input {
+		width:97%;					/* input field spans most of page for mobile */
+		padding:1%;					/* padding reduced */
+		border:1px solid #777;		/* a more pronounced border is required for visibility */
+		-webkit-border-radius: 5px;	/* radius added to mobile input fields */
+		-moz-border-radius: 5px;
+		-o-border-radius: 5px;
+		border-radius: 5px;
+		/* adding inset shaddow to text fields for browsers that support it */
+		-moz-box-shadow: inset 0 0 2px #AAA;
+		-webkit-box-shadow: inset 0 0 2px#AAA;
+		box-shadow: inner 0 0 2px #AAA;
+	}
+
+	/* button wraped in a div to reliably center in mobile view */
+	/* button margin adds white space to mobile form and change display to block*/
+	.button { text-align: center; margin: 5%; display:block; }
+	.button input {
+		margin:0px;					/* remove button indent */
+		padding:3px 10px;			/* add padding around button text */
+		width:auto;					/* auto width overrides 95% width set for inputs */
+		-webkit-border-radius: 15px;/* login button has larger radius */
+		-moz-border-radius: 15px;
+		-o-border-radius: 15px;
+		border-radius: 15px;
+		/* adding gradient to the button for browsers that support it */
+		background-image: -webkit-gradient(
+    		linear,
+    		left bottom,
+    		left top,
+    		color-stop(0.07, rgb(199,195,199)),
+    		color-stop(0.54, rgb(245,245,245)) );
+		background-image: -moz-linear-gradient(
+    		center bottom,
+    		rgb(199,195,199) 7%,
+    		rgb(245,245,245) 54% );
+		}
+
+	#account-links {
+		width: 100%;			/* increase to full width */
+		margin: 0%;				/* remove margin */
+		position: relative; 	/* change to relative positioning */
+		text-align: center;
+		padding:0%;				/* remove padding for mobile view */
+	}
+	
+	#account-links .link-item {
+		border-top: solid 1px #AAA;
+		padding: 3% 0%;
+	}
+
+	#footer {
+		width: 90%;	
+		margin: 0% 5%;
+		position: relative; 	/* change to relative positioning */
+		text-align: center;
+		border-top: none;		/* remove top border */
+		padding:4% 0%;
+		/* reduce footer font size for mobile */
+		font: 12px/18px verdana, helvetica, san-serif;
+	}
+
+	input[type="radio"] {
+		max-width: 15px;
+		margin: 10px 10px 0 0;
+	}
+
+	#duo-div.form-row {
+		margin-left: 0;
+	}
+
+    .devicelist {
+      padding-left: 1px;
+    }
+
+    #duoPasscodeInput {
+      margin-left: 2px !important;
+    }
+
+} /* End of moble media query */
