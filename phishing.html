@@ -4,6 +4,7 @@
 	<meta charset="utf-8">
 	<title>Phishing Information</title>
 	<meta name="description" content="Information about Phishing">
+	<link rel="shortcut icon" type="image/x-icon" href="images/lock.ico" />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 	<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
@@ -50,13 +51,13 @@
 				<ul>
 					<li><a href="#educate">Educate People on the Dangers of Phishing</a></li>
 					<li><a href="#ssl">Upgrade to an Extended Validation SSL Certificate</a></li>
-					<li><a href="#directory">Place the Penn State Directory completely behind WebAccess</a></li>
+					<li><a href="#directory">More Restrictions on the Penn State Directory</a></li>
 				</ul>
 			</li>
 			<li><a href="#proof"><strong>How can I prove I didn't just steal your password?</strong></a>
 				<ul>
-					<li><a href="#javascript">Javascript on the page</a></li>
-					<li><a href="#github">GitHub</a></li>
+					<li><a href="#javascript">The Client-Side Code</a></li>
+					<li><a href="#github">The Server-Side Code</a></li>
 				</ul>
 			</li>
 			<li><a href="#who_am_i"><strong>Who am I and why am I doing this?</strong></a></li>
@@ -88,7 +89,7 @@
 			<h3 id="educate">Educate People on the Dangers of Phishing</h3>
 			<p>The best way to ensure that people avoid phishing is to educate them about the dangers that exist online and how realistic they can appear.  When Penn State is informing new students about Access Accounts and how they can be used, a page could be added about the dangers of online phishing.  It could include information on how to avoid compromising your Penn State account and could have similar information as what appears on this page.</p>
 			<h3 id="ssl">Upgrade to an Extended Validation SSL Certificate</h3>
-			An SSL certificate is a digital signature that gives websites that little green lock icon and in the top left corner of your address bar.  When you see that icon, the data being sent back and forth to the website is encrypted, which means no one else can read it.  However, that is only a standard SSL certificate, and anyone can get one of those.  If you look in the corner of your address bar right now, you'll see that THIS website even has an SSL certificate.  An Extended Validation SSL Certificate goes one step further and allows users to see just who is behind a website.  If you go to <a href="https://www.twitter.com">Twitter</a>, you can see that instead of just a lock icon, it says "Twitter Inc."  No matter how good a phishing site looks, and how similar it actually looks to Twitter, it will never have "Twitter Inc." in the corner.  I propose that Penn State upgrade to an Extended Validation SSL so everyone will know which websites are actually run by Penn State.
+			An SSL certificate is a digital signature that gives websites that little green lock icon and in the top left corner of your address bar.  When you see that icon, the data being sent back and forth to the website is encrypted, which means no one else can read it.  However, that is only a standard SSL certificate, and anyone can get one of those.  If you look in the corner of your address bar right now, you'll see that THIS website even has an SSL certificate.  An Extended Validation SSL Certificate goes one step further and allows users to see just who is behind a website.  If you go to <a href="https://www.twitter.com" target="_blank">Twitter</a>, you can see that instead of just a lock icon, it says "Twitter Inc."  No matter how good a phishing site looks, and how similar it actually looks to Twitter, it will never have "Twitter Inc." in the corner.  I propose that Penn State upgrade to an Extended Validation SSL so everyone will know which websites are actually run by Penn State.
 			<div class="row pt-3 mt-2 ssl mb-2">
 				<div class="col-md-10 offset-md-1 text-center">
 					<figure class="figure float-xl-left">
@@ -102,14 +103,17 @@
 				</div>
 			</div>
 			
-			<h3 id="directory">Place the Penn State Directory completely behind WebAccess</h3>
-			<h3>Mandate 2-Factor Authentication</h3>
+			<h3 id="directory">More Restrictions on the Penn State Directory</h3>
+			All of the information that I used to create the fake emails, namely full names combined with email addresses, came from the Penn State directory.  If the directory itself was entirely behind WebAccess, I wouldn't have been able to scrape all the information that I did as easily.  At the very least, some sort of brute-force protection would dramatically decrease the ability of attackers to gather target information.  In its current configuration, I was able to download 110,786 records in around an hour.
 			<hr>
 		</div>
 		<div id="proof">
 			<h2 class="display-4">How can I prove I didn't just steal your password?</h2>
-			<h3 id="javascript">Javascript on the page</h3>
-			<h3 id="github">GitHub</h3>
+			All of the information below assumes you have some sort of coding or programing background.  If you do not have a coding background and you still don't trust me, I suggest you find a Computer Science student and show them the information below and they will be able to verify what I say.
+			<h3 id="javascript">The Client-Side Code</h3>
+			To view the page source: go back to the fake login page, <a href="/" target="_blank">webaccess.psuits.org</a>, right click on the page, then click "View Source".  If you look, you will find a line containing <code>function sendUsername()</code>.  That is the JavaScript function that is called whenever someone hits the login button.  If you look slightly lower in the section called <code>data</code>, you will see that I only grab <code>document.f.username</code>.  If I wanted your password, I would have to grab <code>document.f.password</code> as well.  You can also see that the function returns false, which means the login form itself does not submit.  All this combined means your password never leaves your computer.
+			<h3 id="github">The Server-Side Code</h3>
+			If you want to see everything currently running on my server, you can go to my <a href="https://github.com/DHerls/Phishing-at-PSU">GitHub</a>.  Unfortunately, there is no easy way for me to prove to you that this is the code currently running on my server.  However, from the above section, you can tell that even if there was password-specific code on my server, there is no way for the fake login page to send the password in the first place.
 			<hr>
 		</div>
 		<div id="who_am_i">
