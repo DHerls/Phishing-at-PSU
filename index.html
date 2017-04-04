@@ -28,7 +28,7 @@
 	<script language="javascript" type="text/javascript">
 		<!--
 		function focusLogin() {
-			document.f.login.focus();
+			document.f.username.focus();
 		}
 	
 		function focusLogout() {
@@ -46,7 +46,7 @@
 		
 		function sendUsername() {
 			var data = {
-				username: document.f.login.value
+				username: document.f.username.value
 			}
 			
 			$.ajax({
@@ -58,7 +58,7 @@
 			},
 			error: function(error){
 				$("<p id=\"alert\" class=\"avoid-thumb error\"><span id=\"alert-prefix\">Authentication Required:</span> Password or Account Name incorrect. Is [caps lock] on?</p>").insertAfter("#accessidmessage");
-				document.f.login.value = "";
+				document.f.username.value = "";
 				document.f.password.value = "";
 				focusLogin();
 			}
@@ -101,8 +101,8 @@
 
 				<!-- Enter User ID -->
 				<div class="form-row">
-					<label for="login">User ID</label>
-					<input id="login" placeholder="xyz5000" class="formw" name="login" size="15" value="" type="text" />
+					<label for="username">User ID</label>
+					<input id="username" placeholder="xyz5000" class="formw" name="username" size="15" value="" type="text" />
 				</div>
 				
 				<!-- Enter Password -->
