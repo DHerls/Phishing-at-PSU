@@ -30,7 +30,7 @@
 		</div>
 	</div>
 	<div class="container">
-		<div>
+		<div class="p-3 accent">
 			<h3>Learn More:</h3>
 			<ul>
 			<li><a href="#what_is"><strong>What is phishing?</strong></a>
@@ -43,6 +43,7 @@
 				<ul>
 					<li><a href="#url">Check The URL</a></li>
 					<li><a href="#links">Links in Emails</a></li>
+					<li><a href="#others">Don't Type Your Password Into Other People's Computers</a></li>
 					<li><a href="#2fa">2-Factor Authentication</a></li>
 					<li><a href="#lastpass">Password Managers</a></li>
 				</ul>
@@ -51,6 +52,7 @@
 				<ul>
 					<li><a href="#educate">Educate People on the Dangers of Phishing</a></li>
 					<li><a href="#ssl">Upgrade to an Extended Validation SSL Certificate</a></li>
+					<li><a href="#ban_others">Forbid the Use of Personal Devices to Solicit Votes on Campus</a></li>
 					<li><a href="#directory">More Restrictions on the Penn State Directory</a></li>
 				</ul>
 			</li>
@@ -78,6 +80,8 @@
 			<p>If you look in the address bar of your browser, you'll see that this website is psuits.org, not psu.edu.  Likewise you can see the email you received was sent from @psuits.org, not @psu.edu.  Whenever you receive an email asking for personal information or for you to log into an account, always check who it's really from and make sure it's who you were expecting.</p>
 			<h3 id="links">Links in emails</h3>
 			<p>One of the best ways to protect yourself from phishing attacks is not clicking any links in emails, especially if you don't recognize the URL.  Someone could make a link that looks like <a href="https://www.bing.com" target="_blank">www.google.com</a> actually redirect to something else.  Go ahead and click that link and you'll see what I mean.  This is what I did in the email you received.  Even though it looked like a real Penn State website, it redirected you here.  If you do get an email with a link in it, you should always copy and paste it into your browser instead of just clicking.  That way you know exactly where you're going.</p>
+			<h3 id="others">Don't Type Your Password Into Other People's Computers</h3>
+			<p>During the UPUA elections and other times throughout the year, you will see people with their personal laptops and devices encouraging people to sign into their Penn State accounts to vote or take a survey.  This is a terrible idea an it is a large risk.  There is no way for you to verify what sort of code is running on that person's computer, and they could be stealing your password even if it's the real Penn State login page.  If you really want to vote in an election or take a survey, use one of your own devices or a computer in a Penn State computer lab.</p>
 			<h3 id="2fa">2-Factor Authentication</h3>
 			<p>2-Factor Authentication means you need two pieces of information to log into your account, not just your password.  The most common method of doing this is having a code sent to your cell phone that you have to type in after your password.  That way even if someone gets your password, they won't be able to access your account.  Most popular websites, and Penn State as well, offer 2-Factor authentication.  You can find how to turn on 2-Factor Authentication for your Penn State account <a href="http://www.identity.psu.edu/services/authentication-services/two-factor/self-service-portal/" target="_blank">here</a>.  Please be aware though that 2FA is not a magic shield.  If someone is targeting you specifically, which is called spear-phishing, then 2-Factor Authentication will only slow the attacker down slightly, and if they are prepared, it won't slow them down at all.</p>
 			<h3 id="lastpass">Password Managers</h3>
@@ -86,11 +90,12 @@
 		</div>
 		<div id="penn_state">
 			<h2 class="display-4">How can Penn State protect its students and faculty from identity theft and phishing?</h2>
+			<p>Penn State as an institution has the ability to enact several changes that could improve the online security of everyone on campus, even if they never view this webpage.</p>
 			<h3 id="educate">Educate People on the Dangers of Phishing</h3>
 			<p>The best way to ensure that people avoid phishing is to educate them about the dangers that exist online and how realistic they can appear.  When Penn State is informing new students about Access Accounts and how they can be used, a page could be added about the dangers of online phishing.  It could include information on how to avoid compromising your Penn State account and could have similar information as what appears on this page.</p>
 			<h3 id="ssl">Upgrade to an Extended Validation SSL Certificate</h3>
-			An SSL certificate is a digital signature that gives websites that little green lock icon and in the top left corner of your address bar.  When you see that icon, the data being sent back and forth to the website is encrypted, which means no one else can read it.  However, that is only a standard SSL certificate, and anyone can get one of those.  If you look in the corner of your address bar right now, you'll see that THIS website even has an SSL certificate.  An Extended Validation SSL Certificate goes one step further and allows users to see just who is behind a website.  If you go to <a href="https://www.twitter.com" target="_blank">Twitter</a>, you can see that instead of just a lock icon, it says "Twitter Inc."  No matter how good a phishing site looks, and how similar it actually looks to Twitter, it will never have "Twitter Inc." in the corner.  I propose that Penn State upgrade to an Extended Validation SSL so everyone will know which websites are actually run by Penn State.
-			<div class="row pt-3 mt-2 ssl mb-2">
+			<p>An SSL certificate is a digital signature that gives websites that little green lock icon and in the top left corner of your address bar.  When you see that icon, the data being sent back and forth to the website is encrypted, which means no one else can read it.  However, that is only a standard SSL certificate, and anyone can get one of those.  If you look in the corner of your address bar right now, you'll see that THIS website even has an SSL certificate.  An Extended Validation SSL Certificate goes one step further and allows users to see just who is behind a website.  If you go to <a href="https://www.twitter.com" target="_blank">Twitter</a>, you can see that instead of just a lock icon, it says "Twitter Inc."  No matter how good a phishing site looks, and how similar it actually looks to Twitter, it will never have "Twitter Inc." in the corner.  I propose that Penn State upgrade to an Extended Validation SSL so everyone will know which websites are actually run by Penn State.</p>
+			<div class="row pt-3 mt-2 mb-2 accent">
 				<div class="col-md-10 offset-md-1 text-center">
 					<figure class="figure float-xl-left">
 						<img src="images/ssl_current.PNG"  class="figure-img" alt="ssl_current" />
@@ -102,18 +107,19 @@
 					</figure>
 				</div>
 			</div>
-			
+			<h3 id="ban_others">Forbid the Use of Personal Devices to Solicit Votes on Campus</h3>
+			<p>As I mentioned above, students soliciting votes during elections is a fantastic way for people to have their passwords stolen.  In fact, watching the most recent UPUA elections gave me the idea for this project.  Penn State should prohibit the use of personal devices to solicit votes in all elections, contests, or anything that requires signing into your Penn State account to access.</p>
 			<h3 id="directory">More Restrictions on the Penn State Directory</h3>
-			All of the information that I used to create the fake emails, namely full names combined with email addresses, came from the Penn State directory.  If the directory itself was entirely behind WebAccess, I wouldn't have been able to scrape all the information that I did as easily.  At the very least, some sort of brute-force protection would dramatically decrease the ability of attackers to gather target information.  In its current configuration, I was able to download 110,786 records in around an hour.
+			<p>All of the information that I used to create the fake emails, namely full names combined with email addresses, came from the Penn State directory.  If the directory itself was entirely behind WebAccess, I wouldn't have been able to scrape all the information that I did as easily.  At the very least, some sort of brute-force protection would dramatically decrease the ability of attackers to gather target information.  In its current configuration, I was able to download 110,786 records in around an hour.</p>
 			<hr>
 		</div>
 		<div id="proof">
 			<h2 class="display-4">How can I prove I didn't just steal your password?</h2>
-			All of the information below assumes you have some sort of coding or programing background.  If you do not have a coding background and you still don't trust me, I suggest you find a Computer Science student and show them the information below and they will be able to verify what I say.
+			<p>All of the information below assumes you have some sort of coding or programming background.  If you do not have a coding background and you still don't trust me, I suggest you find a Computer Science student and show them the information below and they will be able to verify what I say.</p>
 			<h3 id="javascript">The Client-Side Code</h3>
-			To view the page source: go back to the fake login page, <a href="/" target="_blank">webaccess.psuits.org</a>, right click on the page, then click "View Source".  If you look, you will find a line containing <code>function sendUsername()</code>.  That is the JavaScript function that is called whenever someone hits the login button.  If you look slightly lower in the section called <code>data</code>, you will see that I only grab <code>document.f.username</code>.  If I wanted your password, I would have to grab <code>document.f.password</code> as well.  You can also see that the function returns false, which means the login form itself does not submit.  All this combined means your password never leaves your computer.
+			<p>To view the page source: go back to the fake login page, <a href="/" target="_blank">webaccess.psuits.org</a>, right click on the page, then click "View Source".  If you look, you will find a line containing <code>function sendUsername()</code>.  That is the JavaScript function that is called whenever someone hits the login button.  If you look slightly lower in the section called <code>data</code>, you will see that I only grab <code>document.f.username</code>.  If I wanted your password, I would have to grab <code>document.f.password</code> as well.  You can also see that the function returns false, which means the login form itself does not submit.  All this combined means your password never leaves your computer.</p>
 			<h3 id="github">The Server-Side Code</h3>
-			If you want to see everything currently running on my server, you can go to my <a href="https://github.com/DHerls/Phishing-at-PSU">GitHub</a>.  Unfortunately, there is no easy way for me to prove to you that this is the code currently running on my server.  However, from the above section, you can tell that even if there was password-specific code on my server, there is no way for the fake login page to send the password in the first place.
+			<p>If you want to see everything currently running on my server, you can go to my <a href="https://github.com/DHerls/Phishing-at-PSU">GitHub</a>.  Unfortunately, there is no easy way for me to prove to you that this is the code currently running on my server.  However, from the above section, you can tell that even if there was password-specific code on my server, there is no way for the fake login page to send the password in the first place.</p>
 			<hr>
 		</div>
 		<div id="who_am_i">
