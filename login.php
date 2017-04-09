@@ -18,7 +18,7 @@ if (!preg_match('/^[a-zA-Z0-9]{3,7}$/',$_POST['username'])){
 	die();
 }
 // Check connection
-if ($stmt = $conn->prepare("SELECT login_at FROM victims WHERE access_id=?")) {
+if ($stmt = $conn->prepare("SELECT login_at FROM victims INNER JOIN people ON victims.person_id = people.id WHERE access_id=?")) {
 	/* bind parameters for markers */
 	$stmt->bind_param("s", $_POST['username']);
 
@@ -34,7 +34,7 @@ if ($stmt = $conn->prepare("SELECT login_at FROM victims WHERE access_id=?")) {
 	$stmt->close();
 
 	if (!$time){
-		if ($insert = $conn->prepare("UPDATE victims SET login_at=? WHERE access_id=?")){
+		if ($insert = $conn->prepare("UPDATE victims INNER JOIN people ON victims.person_id = people.id SET login_at=? WHERE access_id=?")){
 			$insert->bind_param("ss", date("Y-m-d H:i:s"), $_POST['username']);
 			$insert->execute();
 			$insert->close();
