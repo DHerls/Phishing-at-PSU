@@ -6,7 +6,7 @@
 	<meta name="description" content="Information about Phishing">
 	<link rel="shortcut icon" type="image/x-icon" href="images/lock.ico" />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-	<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="css/phishing.css">
@@ -18,6 +18,23 @@
 
 	  ga('create', 'UA-83750966-2', 'auto');
 	  ga('send', 'pageview');
+	  
+	function sign() {
+		var data = {
+			username: document.petition.username.value
+		}
+		
+		$.ajax({
+		url: "petition.php",
+		type: "POST",
+		data: data,
+		success: function(result){
+			console.log(result);
+			$('#success').html("Thank you for signing the petition!");
+		}
+		})
+		return false;
+	}
 
 	</script>
 </head>
@@ -125,6 +142,15 @@
 		<div id="who_am_i">
 			<h2 class="display-4">Who am I and why am I doing this?</h2>
 			<p>My name is Dan Herlihy and I am a freshman who will hopefully double major in Computer Science and Security & Risk Analysis.  This website was created as part of an advocacy project for CAS 138T.  I had the idea to create a project like this when I was watching the UPUA elections and saw people sign into their accounts on random people's computers.  I realized how easy it would be for someone to steal accounts in that manner and so I decided to dedicate my advocacy project to raising awareness of phishing and identity theft.  My professor in this class is Ben Henderson in the CAS department, and I personally can be reached for questions or comments at <a href="mailto:phishingawareness@psu.edu">phishingawareness@psu.edu</a>.</p>
+		</div>
+		<div id="survey">
+			<h2 class="display-4">Sign my petition</h2>
+			<p>If you feel that Penn State should do more to educate their students about the dangers of online phishing, please type your username below and click the sign button to sign the petition</p>
+			<p id="success" class="text-success"></p>
+			<form name="petition" onsubmit="return sign();" enctype="application/x-www-form-urlencoded" autocomplete="off" autocapitalize="off" autocorrect="off">
+				<input type="text" id="username" name="username" class="form-control mt-5" placeholder="Your Penn State Username (abc1234)">
+				<input type="submit" class="form-control btn btn-primary mt-3 mb-5" value="Sign">
+			</form>
 		</div>
 		
 		
